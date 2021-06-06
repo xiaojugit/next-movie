@@ -1,7 +1,7 @@
 import { Box, Button, Container, Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { FaSearch, FaSignInAlt } from 'react-icons/fa';
-import { BsFillPersonFill } from 'react-icons/Bs';
+import { BsFillPersonFill } from 'react-icons/bs';
 import { css } from '@emotion/react';
 
 const logo = css`
