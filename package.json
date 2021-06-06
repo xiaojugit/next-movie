@@ -3,13 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server/index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.3",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "framer-motion": "^4.1.17",
     "next": "10.2.3",
+    "nodemon": "^2.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-responsive-carousel": "^3.2.18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@emotion/babel-preset-css-prop": "^11.2.0"
   }
 }

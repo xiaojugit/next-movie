@@ -1,3 +1,51 @@
+# 依赖
+
+```bash
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+# 克隆 theme 到项目文件夹
+npx chakra-cli init --theme
+# 开发依赖
+npm install @babel/core @emotion/babel-preset-css-prop --save-dev
+
+npm i react-responsive-carousel
+
+npm i express nodemon
+```
+
+# 自定义 Next 应用服务器
+
+安装
+
+```bash
+npm i express nodemon
+```
+
+新建 server/index.js
+
+```js
+const express = require('express');
+const { default: next } = require('next');
+
+const dev = process.env.NODE_ENV !== 'production';
+
+const app = next({ dev });
+
+const handler = app.getRequestHandler();
+
+app.prepare().then(() => {
+  const serve = express();
+  serve.get('/hello', (req, res) => {
+    res.send('Hello!');
+  });
+  serve.get('*', (req, res) => {
+    handler(req, res);
+  });
+  serve.listen(3000, () => {
+    console.log('serve start successfully');
+  });
+});
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
